@@ -35,7 +35,7 @@ public class Server {
             serverSocket = new ServerSocket(port);
             while (true){//循环接收客户端的链接
                 Socket socket = serverSocket.accept();
-                new Thread(new ServerHandler(socket)).start();
+                new Thread(new ServerHandler(socket)).start();//客户端每一个请求对应一个线程
             }
         }catch(IOException e){
             e.printStackTrace();
